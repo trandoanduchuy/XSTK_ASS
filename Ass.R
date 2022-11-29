@@ -39,18 +39,44 @@ Q3 = apply(convariables, 2, quantile, probs = 0.75) # tính phân vị 3
 t(data.frame(length, mean, sd, min, max, Q1, Q2, Q3)) # tạo bảng thống kê
 
 # b. Vẽ biểu đồ hộp (boxplot):
-mpg_bp = boxplot(mpg ~ cylinders, 
+mpg_bp1 = boxplot(mpg, 
+                  data = new_data, 
+                  xlab = "",
+                  ylab = "Miles Per Gallon",
+                  main = "mpg",
+                  col = 2:6)
+
+mpg_bp2 = boxplot(mpg~cylinders, 
                  data = new_data, 
-                 xlab = "Number of Cylinders",
+                 xlab = "Number of cylinders",
                  ylab = "Miles Per Gallon",
-                 main = "boxplot of mpg grouped by cylinders",
+                 main = "mpg",
                  col = 2:6)
-mpg_bp = boxplot(displacement ~ cylinders, 
-                 data = new_data, 
-                 xlab = "Number of Cylinders",
-                 ylab = "displacement",
-                 main = "boxplot of displacement grouped by cylinders",
-                 col = 2:6)
+
+displacement_bp = boxplot(displacement, 
+                          data = new_data, 
+                          xlab = "",
+                          ylab = "displacement",
+                          main = "displacement",
+                          col = 2:6)
+horsepower_bp = boxplot(horsepower, 
+                        data = new_data, 
+                        xlab = "",
+                        ylab = "horsepower",
+                        main = "horsepower",
+                        col = 2:6)
+weight_bp = boxplot(weight, 
+                    data = new_data, 
+                    xlab = "",
+                    ylab = "weight",
+                    main = "weight",
+                    col = 2:6)
+acceleration_bp = boxplot(acceleration, 
+                    data = new_data, 
+                    xlab = "",
+                    ylab = "acceleration",
+                    main = "acceleration",
+                    col = 2:6)
 # c. Xử lý các giá trị ngoại lai:
 
 # d. Vẽ biểu đồ tần suất (histogram:
